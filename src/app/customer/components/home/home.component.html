@@ -1,0 +1,12 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+
+
+
+  <div class="scroll-down-container">
+    <!-- Your component content goes here -->
+  </div>
+  
+  <button class="scroll-down-button" (click)="scrollToggle()">
+    <i [class]="isScrolledDown ? 'fa fa-chevron-up' : 'fa fa-chevron-down'"></i>
+  </button>

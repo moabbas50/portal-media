@@ -1,0 +1,25 @@
+<div class="container text-center">
+  <h1 >فاعليات</h1>
+  <div class="row  ">
+    <div class="col-10 d-flex justify-content-center">
+      <table class="table table-light text-end">
+        <thead>
+          <tr>
+            <th>الوصف</th>
+            <th>الأسم</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ac of activites">
+            <td>{{ac.description}}</td>
+            <td>{{ac.title}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>

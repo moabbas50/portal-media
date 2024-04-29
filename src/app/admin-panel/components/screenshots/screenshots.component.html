@@ -1,0 +1,60 @@
+<div class="container mt-5" style="margin-top: 10px;">
+    <div class="card text-center">
+      <div class="card-header bg-primary text-white">
+        <div class="row align-items-center">
+          <div class="col text-end">
+            <img width="60" src="assets/images/logo2.png" alt="">
+            <h3 style="margin-bottom: 10px;" class="mb-4">صور المشروع</h3>
+          </div>
+        </div>
+      </div>
+      <div class="card-body" style="margin-top: 20px;">
+        <form (submit)="addScreenshot()">
+          <div class="mb-3 row align-items-center">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <select class="form-control" id="department" (change)="onProjectSelect($event)" required>
+                  <option class="text-center" selected disabled>اختر المشروع</option>
+                  <option class="text-center" style="font-size: large;" *ngFor="let project of projects"
+                    [value]="project.id">{{ project.title }}</option>
+                </select>
+                <div class="invalid-feedback">Please select a project.</div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group border rounded p-3">
+                <label for="photo">صورة للمشروع</label>
+                <input type="file" class="form-control border-0" id="photo" (change)="handlePhotoInput($event)"
+                  accept="image/*" required>
+                <div class="invalid-feedback">Please upload a project photo.</div>
+              </div>
+            </div>
+          </div>
+          <button style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success">اضافة صورة للمشروع</button>
+        </form>
+      </div>
+      <div class="container mt-5">
+        <div  style="margin: 15px;"  class="table-responsive">
+          <table  class="table table-striped text-center" dir="rtl">
+            <thead class="bg-primary text-white">
+              <tr>
+                <th class="text-center" style="width: 10%;">حذف</th>
+                <th class="text-center" style="width: 20%;">رقم المشروع</th>
+                <th class="text-center" style="width: 40%;">screenshots</th>
+   
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let screenshot of screenshots">
+                <td><button (click)="deleteScreenshot(screenshot.id)" class="btn btn-danger">حذف</button></td>
+                <td>{{ selectedProjectId }}</td>
+                <td><img [src]="screenshot.full_path" alt="screenshot" style="max-height: 100px;"></td>
+             
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  

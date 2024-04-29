@@ -1,0 +1,81 @@
+<div class="header">
+    <div class="container">
+        <div class="header-menu">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+
+
+                            <li><a style="font-size: 25px;font-weight: bold;" [routerLink]="['./Projects']">مشاريع التخرج </a></li>
+
+                            <!-- <li class="dropdown">
+                                <a style="font-size: 25px;font-weight: bold;" href="#" class="dropdown-toggle"
+                                    data-toggle="dropdown" role="button" aria-haspopup="true"
+                                    aria-expanded="false">مشاريع التخرج <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+
+                                    <li *ngFor="let d of departments">
+                                        <a style="font-size: 25px;font-weight: bold;" [routerLink]="['./Projects',d.id,d.name]">
+                                            {{d.name}}</a>
+                                        </li>
+
+
+
+                                </ul>
+                            </li> -->
+                              <li><a style="font-size: 25px;font-weight: bold;" href="https://sjocs.journals.ekb.eg/">المجلة</a></li>
+                              <li><a style="font-size: 25px;font-weight: bold;" [routerLink]="['./activites']">فعاليات</a></li>
+
+
+                              <li class="active"><a style="font-size: 25px;font-weight: bold;" [routerLink]="'./main-page'">الصفحة
+                                الرئيسية </a></li>
+                        </ul>
+
+
+
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+            <!-- start search-->
+
+            <div class="search-box">
+                <div id="sb-search" class="sb-search">
+                    <form action="#" method="post">
+                        <input class="sb-search-input" placeholder="Enter your search term..." type="search"
+                            name="search" id="search">
+                        <input class="sb-search-submit" type="submit" value="">
+                        <span class="sb-icon-search"> </span>
+                    </form>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="number">
+            <p>+123456789</p>
+        </div>
+        <div class="logo">
+            <a href="index.html"><img width="250" src="assets/images/logo1.png" alt=""><span
+                    style="color: #ec7632;">Portal</span>Media</a>
+        </div>
+        <div class="banner">
+            <h2>Discover Graduation Project</h2>
+        </div>
+
+    </div>
+</div>

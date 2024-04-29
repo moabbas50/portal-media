@@ -1,0 +1,10 @@
+table tbody tr td , table thead tr th  {
+
+text-align: right;
+direction: rtl;
+
+}
+ h1{
+  margin-top: 20px;
+  margin-bottom: 20px;
+ }

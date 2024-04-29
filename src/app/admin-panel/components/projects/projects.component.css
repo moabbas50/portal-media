@@ -1,0 +1,54 @@
+/* Custom CSS */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .container {
+    width: 800px;
+}
+  .card-header {
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .card-body {
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+    max-height: 500px;
+  }
+  
+  .table thead th {
+    border: none;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #e9ecef;
+  }
+  
+  .bg-primary {
+    background-color: #ee7733 !important;
+  }
+  
+  .text-primary {
+    color: #ee7733 !important;
+  }
+  .card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

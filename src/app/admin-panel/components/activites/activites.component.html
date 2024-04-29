@@ -1,0 +1,64 @@
+<div class="container mt-5" style="margin-top: 10px;">
+  <div class="card text-center">
+    <div class="card-header bg-primary text-white">
+      <div class="row align-items-center">
+        <div class="col text-end">
+          <img width="60" src="assets/images/logo2.png" alt="">
+          <h3 style="margin-bottom: 10px;" class="mb-4">الفعاليات</h3>
+        </div>
+      </div>
+    </div>
+    <div class="card-body" style="margin-top: 20px;">
+      <form [formGroup]="activeform" (submit)="addProject()" class="needs-validation" novalidate>
+        <div class="mb-3 row align-items-center">
+          <div class="col-sm-12">
+            <div class="form-group border rounded p-3">
+              <label for="photo"> الاسم</label>
+              <input  formControlName="title" class="form-control border-0" type="text" required>
+
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="form-group border rounded p-3">
+              <label for="photo"> الوصف</label>
+              <input  formControlName="description" class="form-control border-0" type="text" required>
+
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group border rounded p-3">
+              <label for="photo">ملف </label>
+              <input   formControlName="filee" type="file" class="form-control border-0" id="filee" required (change)="handleFileInput($event)">
+            </div>
+          </div>
+        </div>
+
+
+        <button  style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success">
+          أضافة فاعلية</button>
+      </form>
+    </div>
+    <div class="container mt-5">
+      <div style="margin: 15px;" class="table-responsive">
+        <table class="table table-striped text-center" dir="rtl">
+          <thead class="bg-primary text-white">
+            <tr>
+              <th class="text-center" style="width: 10%;">حذف</th>
+              <th class="text-center" style="width: 20%;">الاسم</th>
+              <th class="text-center" style="width: 40%;">الوصف</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let active of activity">
+              <td><button (click)="deletactivites(active.id)" class="btn btn-danger">حذف</button></td>
+              <td>{{active.title}}</td>
+              <td>{{active.description}}</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

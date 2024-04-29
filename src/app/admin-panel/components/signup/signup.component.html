@@ -1,0 +1,52 @@
+<div class="container-fluid h-100" style="background-image: url(assets/images/1.jpg);background-repeat: repeat;">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="col-md-12">
+        <div class="card login-card">
+          <div class="card-header">
+            <img width="50" src="assets/images/logo1.png" alt=""> Register
+          </div>
+          <div class="card-body">
+            <form (submit)="register()" class="register-form">
+              <div class="mb-3">
+                <label for="firstname" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstname" [(ngModel)]="firstname" name="firstname"
+                  required>
+              </div>
+              <div class="mb-3">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastname" [(ngModel)]="lastname" name="lastname" required>
+              </div>
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" class="form-control" id="phone" [(ngModel)]="phone" name="phone" required>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password"
+                  required>
+              </div>
+              <div class="mb-3">
+                <label for="role" class="form-label">Role</label>
+                <select class="form-select" id="role" [(ngModel)]="role" name="role" required>
+                  <option value="student">Student</option>
+                  <option value="Admin">Admin</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Register</button>
+              <a class="btn btn-link" routerLink="../login">Already have an account? Login</a>
+         
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

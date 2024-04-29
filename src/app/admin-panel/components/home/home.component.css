@@ -1,0 +1,15 @@
+/* app.component.css */
+.main-content {
+    transition: margin-left 0.1s;
+  }
+  /* app.component.css */
+.logout-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.logout-button {
+  color: #000; /* Change color as needed */
+  font-size: x-large;
+}

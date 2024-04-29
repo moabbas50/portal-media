@@ -1,0 +1,131 @@
+<div class="container mt-5">
+    <div class="card text-center">
+        <div class="card-header bg-primary text-white">
+            <div class="row align-items-center">
+                <div class="col text-end">
+                    <img width="60" src="assets/images/logo2.png" alt="">
+                    <h3 style="margin-bottom: 10px;" class="mb-4">المشاريع</h3>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="projectForm" (submit)="addProject()" class="needs-validation" novalidate>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="title">اسم المشروع</label>
+                            <input type="text" class="form-control" id="title" formControlName="title" required>
+                            <div class="invalid-feedback">Please provide a project title.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="year">السنة</label>
+                            <input type="text" class="form-control" id="year" formControlName="year" required>
+                            <div class="invalid-feedback">Please provide a year.</div>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div style="display: none;" class="col-md-6">
+                        <label >حالة المشروع</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="statusPending" value="pending"
+                                formControlName="status">
+                            <label class="form-check-label" for="statusPending">Pending</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="statusApproved" value="approved"
+                                formControlName="status">
+                            <label class="form-check-label" for="statusApproved">Approved</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="description">وصف المشروع</label>
+                            <textarea class="form-control" id="description" formControlName="description"
+                                required></textarea>
+                            <div class="invalid-feedback">Please provide a project description.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group border rounded p-3">
+                            <label for="video_demo">فيديو للمشروع</label>
+                            <input type="file" class="form-control border-0" id="video_demo" (change)="handleFileInput($event)" formControlName="video_demo"
+                                accept="video/*" required>
+                            <div class="invalid-feedback">Please upload a project video.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="department">القسم</label>
+                            <select class="form-control" id="department" formControlName="department" required>
+                                <option selected disabled>اختر القسم</option>
+                                <option *ngFor="let department of departments" [value]="department.id">{{ department.name }}</option>
+                            </select>
+                            <div class="invalid-feedback">Please select a department.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h3>تقييم المشروع</h3>
+                        <div class="rating">
+                            <i (click)="MakeRate(1)" style="cursor: pointer;font-size: 26px;margin-right: 3px;"
+                                class="fa fa-star"
+                                [ngStyle]="StarRating>=1 ? {'color': '#e3c01c'} : {'color': 'gray'}"></i>
+                            <i (click)="MakeRate(2)" style="cursor: pointer;font-size: 26px;margin-right: 3px;"
+                                class="fa fa-star"
+                                [ngStyle]="StarRating>=2 ? {'color': '#e3c01c'} : {'color': 'gray'}"></i>
+                            <i (click)="MakeRate(3)" style="cursor: pointer;font-size: 26px;margin-right: 3px;"
+                                class="fa fa-star"
+                                [ngStyle]="StarRating>=3 ? {'color': '#e3c01c'} : {'color': 'gray'}"></i>
+                            <i (click)="MakeRate(4)" style="cursor: pointer;font-size: 26px;margin-right: 3px;"
+                                class="fa fa-star "
+                                [ngStyle]="StarRating>=4 ? {'color': '#e3c01c'} : {'color': 'gray'}"></i>
+                            <i (click)="MakeRate(5)" style="cursor: pointer;font-size: 26px;margin-right: 3px;"
+                                class="fa fa-star "
+                                [ngStyle]="StarRating>=5 ? {'color': '#e3c01c'} : {'color': 'gray'}"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" style="margin-bottom: 20px;" class="btn btn-success">اضافة المشروع</button>
+            </form>
+        </div>
+        <div style="margin: -15px;" class="container mt-5">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th class="text-center"scope="col">اسم المشروع</th>
+                  <th class="text-center"scope="col">وصف المشروع</th>
+                  <th class="text-center"scope="col">فيديو المشروع</th>
+                   <th class="text-center" style="width: 10%;">حذف</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let project of projects">
+                  <td>{{ project.title }}</td>
+                  <td>{{ project.description }}</td>
+                  <td>
+                    <video width="320" height="240" controls>
+                      <source [src]="project.video_demo_full_path" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </td>
+                  <td><button (click)="deleteproject(project.id)"  class="btn btn-danger">حذف</button></td>
+               
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+
+    
+</div>
+
+  

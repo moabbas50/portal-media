@@ -1,0 +1,21 @@
+<main>
+    <div class="topper">
+      <div class="icon"><img width="50" src="assets/images/logo1.png" alt=""></div>
+      <div class="name">Chat Pot</div>
+    </div>
+    <div class="msgs_cont">
+      <ul id="list_cont">
+        <!-- Initial message -->
+        <li class="rchat">مرحبا بك في جامعة 6 اكتوبر</li>
+        <!-- User's sent message -->
+        <li *ngFor="let chat of chats" [class]="chat.sender === 'user' ? 'schat' : 'rchat'">{{ chat.message }}</li>
+      </ul>
+    </div>
+    <div class="bottom">
+      <div id="input">
+        <input type="text" id="txt" placeholder="Send a message" [(ngModel)]="message">
+        <button class="btn-success" (click)="sendChatMessage()">Send</button>
+      </div>
+    </div>
+  </main>
+  

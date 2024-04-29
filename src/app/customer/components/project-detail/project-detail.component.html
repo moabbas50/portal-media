@@ -1,0 +1,124 @@
+<div class="blog w3layouts-agile">
+	<div class="container">
+		<div class="blog-top">
+
+			<div class="col-md-8 ">
+				<div class=" blog_box">
+					<video controls class="img-responsive">
+						<source [src]="projectdetail.video" type="video/mp4">
+
+					</video>
+					<h2 class="text-center">{{projectdetail.title}}</h2>
+					<div class="links">
+						<p>Posted by <a href="#">Admin</a> in General | <a href="#">10 Comments</a></p>
+					</div>
+					<p>{{projectdetail.description}}</p>
+				</div>
+				<!---->
+				<div class="comment-top">
+					<div class="top-comment">
+						<label></label>
+						<h1>Comment & Reviews</h1>
+					</div>
+					<div class="comment-container" style="overflow-y: auto; max-height: 400px;">
+						<div *ngFor="let r of ReviewComments" class="comment-top">
+
+							<div class="media-left">
+								<a href="#">
+									<img style="margin: 5px;" src="assets/images/si.png" alt="">
+								</a>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">Students Review account({{r.id}})</h4>
+								<p>{{r.comment}}.</p>
+								<!-- Nested media object -->
+								<div class="text-center rating">
+									<i style="font-size: 25px;margin-right: 3px;margin-bottom: 60px;" class="fa fa-star"
+										[ngStyle]="r.rating>=1 ? {'color': '#e3c01c'} : {'color': 'gray'}"></i>
+									<i style="font-size: 25px;margin-right: 3px;margin-bottom: 60px;" class="fa fa-star"
+										[ngStyle]="r.rating>=2 ? {'color': '#e3c01c'} : {'color': 'gray'}"></i>
+									<i style="font-size: 25px;margin-right: 3px;margin-bottom: 60px;" class="fa fa-star"
+										[ngStyle]="r.rating>=3 ? {'color': '#e3c01c'} : {'color': 'gray'}"></i>
+									<i style="font-size: 25px;margin-right: 3px;margin-bottom: 60px;"
+										class="fa fa-star "
+										[ngStyle]="r.rating>=4 ? {'color': '#e3c01c'} : {'color': 'gray'}"></i>
+									<i style="font-size: 25px;margin-right: 3px;margin-bottom: 60px;"
+										class="fa fa-star "
+										[ngStyle]="r.rating>=5 ? {'color': '#e3c01c'} : {'color': 'gray'}"></i>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+
+				</div>
+				<!---->
+				<div class="comment w3layouts-agile">
+					<div class="top-com">
+						<label></label>
+						<h2>Leave a Comment</h2>
+					</div>
+					<div class=" comment-bottom">
+						<form (ngSubmit)="onSubmit()">
+							<div class="row full-width">
+								<div class="col-md-3" style="font-size: xx-large;font-weight: bold;">Rating : </div>
+								<div class="col-md-6">
+		
+									<div>
+										<div class="rating">
+											<i (click)="MakeRate(1)" style="cursor: pointer;;font-size: 26px;margin-right: 3px;"
+												class="fa fa-star"
+												[ngStyle]="commentData.rating>=1 ? {'color': '#e3c01c'} : {'color': 'gray'}"></i>
+											<i (click)="MakeRate(2)" style="cursor: pointer;;font-size: 26px;margin-right: 3px;"
+												class="fa fa-star"
+												[ngStyle]="commentData.rating>=2 ? {'color': '#e3c01c'} : {'color': 'gray'}"></i>
+											<i (click)="MakeRate(3)" style="cursor: pointer;;font-size: 26px;margin-right: 3px;"
+												class="fa fa-star"
+												[ngStyle]="commentData.rating>=3 ? {'color': '#e3c01c'} : {'color': 'gray'}"></i>
+											<i (click)="MakeRate(4)" style="cursor: pointer;;font-size: 26px;margin-right: 3px;"
+												class="fa fa-star "
+												[ngStyle]="commentData.rating>=4 ? {'color': '#e3c01c'} : {'color': 'gray'}"></i>
+											<i (click)="MakeRate(5)" style="cursor: pointer;;font-size: 26px;margin-right: 3px;"
+												class="fa fa-star "
+												[ngStyle]="commentData.rating>=5 ? {'color': '#e3c01c'} : {'color': 'gray'}"></i>
+										</div>
+									</div>
+		
+								</div>
+							</div>
+		
+							<textarea [(ngModel)]="commentData.comment" name="comment" placeholder="Your Comment"
+								required=""></textarea>
+							<input type="submit" value="Send">
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 categories-grid">
+
+
+				<div class="blog-bottom">
+					<h4>Project Screen Shots</h4>
+					<br>
+					<div class="row">
+						<div *ngFor="let s of screenshoots" class="col-md-6">
+							<div class="product-go">
+								<div>
+									<img width="200" class="img-responsive" src="{{s.full_path}}" alt="">
+								</div>
+
+							</div>
+						</div>
+					</div>
+				
+
+
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div> 
+
+    <app-footer></app-footer>

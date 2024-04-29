@@ -1,0 +1,40 @@
+/* sidebar.component.css */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -200px; /* Adjusted initial position to partially off-screen */
+    height: 100%;
+    width: 250px;
+    background-color: #333;
+    transition: left 0.3s; /* Changed transition property to only left */
+  }
+  
+  #sidebar.active {
+    left: 0;
+  }
+  
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #222;
+  }
+  
+  .sidebar-header h3 {
+    color: #fff;
+    margin: 0;
+  }
+  
+  .nav-link {
+    color: #fff !important;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-link:hover {
+    background-color: #555;
+  }
+  

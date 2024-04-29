@@ -1,0 +1,28 @@
+<!-- login.component.html -->
+<div class="container-fluid h-100" style="background-image: url(assets/images/1.jpg);background-repeat: repeat;">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-md-12">
+            <div class="card login-card">
+                <div class="card-header">
+                    <img width="50" src="assets/images/logo1.png" alt=""> Admin Login
+                </div>
+                <div class="card-body">
+                    <form (submit)="login()" class="login-form">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" [(ngModel)]="password"
+                                name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        <a type="button" class="btn btn-secondary" (click)="goToSignUp()">SignUp</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
